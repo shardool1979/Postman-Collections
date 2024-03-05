@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "8c0fba02-6cb7-49dd-9260-5bf20a733bf3",
+		"name": "Jitterbit Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetToken",
+			"id": "1f1030eb-b92f-4f72-a69b-cd98c4039587",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authToken",
+						"value": "2_9651ca4d-1ff5-48e6-97b5-b1397f1a59a4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"email\": \"yadira.zavala@jitterbit.com\", \"password\": \"Welcome2jb!12\"}"
+				},
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Operation Log",
+			"id": "126870c5-619e-4730-bc92-b7c463bf5ae2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authToken",
+						"value": "2_cd83b7ab-f41b-463d-9c56-34b601f90b67"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {  \n    \"fromThisDate\": \"2021-03-31T00:37:45.541Z\",\n\t\"includeSubOperations\": true,\n\t\"organizationId\": \"381451\",\n    \"status\" : [\n        \"7\", \"11\"\n    ],\n    \"projectName\": [\n            \"JIRA to Smartsheet-Status Updates-Recipes-Q1-2020\"\n        ],\n        \"untilThisDate\": \"2021-04-01T23:59:59.541Z\"\n } \n"
+				},
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/oplog/query"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Operation Status",
+			"id": "6934ca0d-ce9b-4bf8-bc37-2c0098fc7cb4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authToken",
+						"value": "2_bcaeee07-3895-4488-9c06-9db19dc898ea"
+					}
+				],
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/oplog/listallstatus"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Agent List by OrgId",
+			"id": "1f2ce587-eb3f-4175-8e77-cd493a05eadd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "2_1c49bb5f-da00-44e5-8063-c897b4ffbe68",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/agent/listinorg/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Operation Log Detail By OpInstanceGUID",
+			"id": "58060d29-6c49-4634-9491-0ff49e8bbe42",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "2_53148433-0e2c-4344-9bba-5d10c4d5b91f",
+						"type": "text"
+					}
+				],
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/oplog/detail/4f984037-38e5-45df-8f86-ea2ef76b14d5"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Operation Status By ParentOpInstanceGUID",
+			"id": "b8ed07d2-5307-477a-be7a-db614c645650",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "2_cd83b7ab-f41b-463d-9c56-34b601f90b67",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"organizationId\": \"381451\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://na-east.jitterbit.com/jitterbit-cloud-restful-service/oplog/opstatuses/9dbc2b63-9204-4e07-8315-4d9dca692cd4"
+			},
+			"response": []
+		}
+	]
+}
